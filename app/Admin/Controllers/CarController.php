@@ -17,7 +17,7 @@ class CarController extends AdminController
      *
      * @var string
      */
-    protected $title = '\App\Models\Car';
+    protected $title = 'Автомобилы';
 
     /**
      * Make a grid builder.

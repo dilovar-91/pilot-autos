@@ -16,7 +16,7 @@ class CarController extends Controller
      */
     public function index()
     {
-        $cars = Car::with('complectations')->paginate(6);
+        $cars = Car::with('complectations')->get();
         return view('welcome')->with(array('cars'=>$cars ));
     }
     

@@ -3,7 +3,7 @@
 @section('content')  
 <header class="bg-primary text-center py-5 mb-4">
   <div class="container">
-    <h1 class="font-weight-light text-white">Список авто страница №{{$cars->currentPage() ?? ''}}</h1>
+    <h1 class="font-weight-light text-white">Список автомобилей</h1>
   </div>
 </header>
 
@@ -23,7 +23,7 @@
       </div>
     </div>
     @endforeach
-    <div class="text-center">{{ $cars->links() }}</div>
+   
     @endif
     
   </div>
