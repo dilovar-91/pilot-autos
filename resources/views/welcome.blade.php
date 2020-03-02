@@ -15,10 +15,10 @@
     @foreach($cars as $car)
     <div class="col-xl-4 col-md-6 mb-4">
       <div class="card border-0 shadow">
-      <a href="/detail/{{$car->id}}"><img src="/uploads/{{$car->pic ?? nopic.png}}" class="card-img-top" alt="..."></a>
+      <a href="/detail/{{$car->id}}"><img src="/uploads/{{$car->pic ?? nopic.png}}" class="card-img-top" style="height: 190px;" alt="..."></a>
         <div class="card-body text-center">
           <h5 class="card-title mb-0"><a href="/detail/{{$car->id}}">{{$car->name}}</a></h5>
-          <div class="card-text text-black-50">От {{$car->price ?? 0}} руб. </div>
+          
         </div>
       </div>
     </div>
