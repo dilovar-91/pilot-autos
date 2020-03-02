@@ -40,8 +40,8 @@
       <th scope="row">{{ $loop->iteration }}</th>
       <td>{{$str->title}}</td>
       <td>{{$str->type->name ?? ''}}</td>
-      <td><span class="badge badge-danger">{{$str->price}} руб.</span></td>
-      <td><span class="badge badge-primary">{{$str->price_credit}} руб.</span></td>
+      <td><span class="badge badge-danger text-lg ">{{number_format($str->price, 0, ',', ' ') ?? ''}} руб.</span></td>
+      <td><span class="badge badge-primary">{{number_format($str->price_credit, 0, ',', ' ') ?? ''}} руб.</span></td>
     </tr>  
   @endforeach
   @endif

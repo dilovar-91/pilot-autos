@@ -72,7 +72,7 @@ class CarController extends AdminController
         $form = new Form(new Car());
         $form->text('name', __('Название'));
         $form->text('description', __('Описание'));
-        $form->image('pic', __('Рисунок'))->move('public/uploads/');;
+        $form->image('pic', __('Рисунок'));;
         //$form->number('brand_id', __('Brand id'));
         //$form->color('color', __('Color'));
         return $form;
