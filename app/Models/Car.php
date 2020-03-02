@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Car extends Model
 {
-    protected $fillable =['name','type', 'price', 'price-credit'];
+    protected $fillable =['name','pic'];
 
     public function complectations()
     {
