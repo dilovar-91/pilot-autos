@@ -15,7 +15,7 @@
     @foreach($sites as $site)
     <div class="col-xl-2 col-md-3 mb-4">
       <div class="card border-0 shadow">
-      <a href="{{$site->url}}" target="_blank"><img src="/uploads/brands/{{$site->pic ?? no-image.png}}" class="card-img-top" style="height: 110px;" alt="..."></a>
+      <a href="{{$site->url}}" target="_blank"><img src="/uploads/brands/{{($site->pic !== Null ? $site->pic : 'no-image.png')}}" class="card-img-top" style="height: 110px;" alt="..."></a>
         <div class="card-body text-center">
           <h5 class="card-title mb-0"><a href="{{$site->url}}" target="_blank">{{$site->title}}</a></h5>          
           <p><a href="{{$site->url}}" target="_blank">{{$site->url}}</a></p>          
@@ -45,7 +45,7 @@
     @foreach($brands as $brand)
     <div class="col-xl-2 col-md-3 mb-4">
       <div class="card border-0 shadow">
-      <a href="/brand/{{$brand->id}}"><img src="/uploads/brands/{{$brand->pic ?? nopic.png}}" class="card-img-top" style="height: 120px;" alt="..."></a>
+      <a href="/brand/{{$brand->id}}"><img src="/uploads/brands/{{$brand->pic ?? 'nopic.png'}}" class="card-img-top" style="height: 120px;" alt="..."></a>
         <div class="card-body text-center">
           <h5 class="card-title mb-0"><a href="/brand/{{$brand->id}}">{{$brand->name}}</a></h5>          
         </div>

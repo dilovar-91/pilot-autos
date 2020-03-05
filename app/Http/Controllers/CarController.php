@@ -23,8 +23,8 @@ class CarController extends Controller
     }
     public function home()
     {
-        $brands = Brand::get();
-        $sites = Site::get();
+        $brands = Brand::orderBy('order')->get();
+        $sites = Site::orderBy('order')->get();
         return view('home')->with(array('brands'=>$brands, 'sites'=>$sites ));
     }
 
