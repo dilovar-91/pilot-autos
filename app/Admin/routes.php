@@ -13,6 +13,8 @@ Route::group([
     $router->get('/', 'HomeController@index')->name('admin.home');
     $router->resource('cars', CarController::class);
     $router->resource('complectations', ComplectationController::class);
+    $router->resource('brands', BrandController::class);
+    $router->resource('sites', SiteController::class);
     $router->get('/api/types', 'CarController@getType')->name('api.types');
     $router->get('/api/cars', 'CarController@getCar')->name('api.cars');
 

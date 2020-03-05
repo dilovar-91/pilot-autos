@@ -12,4 +12,10 @@ class Car extends Model
     {
         return $this->hasMany('App\Models\Complectation');
     }
+
+    public function brand()
+    {
+        return $this->belongsTo('App\Models\Brand');        
+  
+    }
 }

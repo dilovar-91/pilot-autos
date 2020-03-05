@@ -11,5 +11,7 @@
 |
 */
 
-Route::get('/', [CarController::class, 'uses' => 'CarController@index'])->name('index');
+Route::get('/', [CarController::class, 'uses' => 'CarController@home'])->name('home');
+//Route::get('/home', [CarController::class, 'uses' => 'CarController@home'])->name('home');
+Route::get('/brand/{id}', [CarController::class, 'uses' => 'CarController@brandDetail'])->name('brandDetail');
 Route::get('/detail/{id}', [CarController::class, 'uses' => 'CarController@getComplectations'])->name('getComplectations');
