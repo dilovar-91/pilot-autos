@@ -8,6 +8,7 @@ use App\Models\Type;
 use App\Models\Brand;
 use App\Models\Site;
 use App\Models\Complectation;
+use App\Models\Competitor;
 
 class CarController extends Controller
 {
@@ -25,7 +26,8 @@ class CarController extends Controller
     {
         $brands = Brand::orderBy('order')->get();
         $sites = Site::orderBy('order')->get();
-        return view('home')->with(array('brands'=>$brands, 'sites'=>$sites ));
+        $competitors = Competitor::orderBy('order')->get();
+        return view('home')->with(array('brands'=>$brands, 'sites'=>$sites, 'competitors'=>$competitors ));
     }
 
     public function brandDetail($id)

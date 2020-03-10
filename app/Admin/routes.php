@@ -15,6 +15,7 @@ Route::group([
     $router->resource('complectations', ComplectationController::class);
     $router->resource('brands', BrandController::class);
     $router->resource('sites', SiteController::class);
+    $router->resource('competitors', CompetitorController::class);
     $router->get('/api/types', 'CarController@getType')->name('api.types');
     $router->get('/api/cars', 'CarController@getCar')->name('api.cars');
 
