@@ -13,7 +13,7 @@
     <!-- Team Member 1 -->
     @if (isset($sites))
     @foreach($sites as $site)
-    <div class="col-xl-2 col-md-3 mb-4 pr-1">
+    <div class="col-xl-2 col-md-3 col-6 mb-4 pr-1">
       <div class="card border-0 shadow">
       <a href="{{$site->url}}" target="_blank"><img src="/uploads/brands/{{($site->pic !== Null ? $site->pic : 'no-image.png')}}" class="card-img-top" style="height: 100px;" alt="..."></a>
         <div class="card-body text-center">
@@ -43,7 +43,7 @@
     <!-- Team Member 1 -->
     @if (isset($brands))
     @foreach($brands as $brand)
-    <div class="col-xl-2 col-md-3 mb-4 pr-1">
+    <div class="col-xl-2 col-md-3 col-6 mb-4 pr-1">
       <div class="card border-0 shadow">
       <a href="/brand/{{$brand->id}}"><img src="/uploads/brands/{{$brand->pic ?? 'nopic.png'}}" class="card-img-top" style="height: 100px;" alt="..."></a>
         <div class="card-body text-center">
@@ -72,7 +72,7 @@
     <!-- Team Member 1 -->
     @if (isset($competitors))
     @foreach($competitors as $competitor)
-    <div class="col-xl-2 col-md-3 mb-4 pr-0">
+    <div class="col-xl-2 col-md-3 col-6 mb-4 pr-0">
       <div class="card border-0 shadow">
       <a href="{{$competitor->url}}" target="_blank"><img src="/uploads/{{$competitor->pic ?? 'nopic.png'}}" class="card-img-top" style="height: 90px;" alt="..."></a>
         <div class="card-body text-center">
@@ -81,9 +81,7 @@
       </div>
     </div>
     @endforeach
-   
     @endif
-    
   </div>
   <!-- /.row -->
 
