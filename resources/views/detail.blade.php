@@ -1,6 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.main')
 @section('title', 'Список автомобилей')
 @section('content')  
+
 <header class="bg-primary text-center py-5 mb-4">
   <div class="container">
     <h1 class="font-weight-light text-white">{{$carinfo->name ?? ''}}</h1>
@@ -9,6 +10,7 @@
 
 <!-- Page Content -->
 <div class="container">
+  
   <div class="row">
   
   @if (isset($carinfo))

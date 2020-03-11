@@ -9,9 +9,19 @@ use App\Models\Brand;
 use App\Models\Site;
 use App\Models\Complectation;
 use App\Models\Competitor;
+use Illuminate\Support\Facades\Auth;
 
 class CarController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *

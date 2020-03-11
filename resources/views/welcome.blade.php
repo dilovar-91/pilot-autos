@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.main')
 @section('title', 'Список автомобилей')
 @section('content')  
 <header class="bg-primary text-center py-5 mb-4">

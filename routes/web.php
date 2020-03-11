@@ -15,3 +15,8 @@ Route::get('/', [CarController::class, 'uses' => 'CarController@home'])->name('h
 //Route::get('/home', [CarController::class, 'uses' => 'CarController@home'])->name('home');
 Route::get('/brand/{id}', [CarController::class, 'uses' => 'CarController@brandDetail'])->name('brandDetail');
 Route::get('/detail/{id}', [CarController::class, 'uses' => 'CarController@getComplectations'])->name('getComplectations');
+
+Auth::routes(['register' => false]);
+
+Route::get('/home', [CarController::class, 'uses' => 'CarController@home'])->name('home');
+Route::get('/logout', [HomeController::class, 'uses' => 'HomeController@logout'])->name('logout');

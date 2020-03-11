@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.main')
 @section('title', 'Список автомобилей')
 @section('content')  
 <header class="bg-primary text-center py-3 mb-4">
@@ -9,6 +9,7 @@
 
 <!-- Page Content -->
 <div class="container">
+  
   <div class="row">
     <!-- Team Member 1 -->
     @if (isset($sites))
@@ -18,7 +19,7 @@
       <a href="{{$site->url}}" target="_blank"><img src="/uploads/brands/{{($site->pic !== Null ? $site->pic : 'no-image.png')}}" class="card-img-top" style="height: 100px;" alt="..."></a>
         <div class="card-body text-center">
           <h6 class="card-title mb-0"><a href="{{$site->url}}" target="_blank">{{$site->title}}</a></h6>          
-          <p><a href="{{$site->url}}" target="_blank">{{$site->url}}</a></p>          
+              
         </div>
       </div>
     </div>
