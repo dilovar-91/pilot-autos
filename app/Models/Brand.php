@@ -10,4 +10,9 @@ class Brand extends Model
     {
         return $this->hasMany('App\Models\Car');
     }
+
+    public function models()
+    {
+        return $this->hasMany('App\Models\CarModel');
+    }
 }

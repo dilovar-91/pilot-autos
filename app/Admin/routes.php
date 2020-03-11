@@ -16,6 +16,10 @@ Route::group([
     $router->resource('brands', BrandController::class);
     $router->resource('sites', SiteController::class);
     $router->resource('competitors', CompetitorController::class);
+    $router->resource('car-models', ModelController::class);
+
+
+
     $router->get('/api/types', 'CarController@getType')->name('api.types');
     $router->get('/api/cars', 'CarController@getCar')->name('api.cars');
 

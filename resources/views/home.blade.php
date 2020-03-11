@@ -40,27 +40,27 @@
 
 <!-- Page Content -->
 <div class="container">
-  <div class="row">
+<div class="row">
     <!-- Team Member 1 -->
+    
     @if (isset($brands))
+    <?php $numOfCols = 8;?>
+    
+      
     @foreach($brands as $brand)
     <div class="col-xl-2 col-md-3 col-6 mb-4 pr-1 pl-1">
       <div class="card border-0 shadow">
       <a href="/brand/{{$brand->id}}"><img src="/uploads/brands/{{$brand->pic ?? 'nopic.png'}}" class="card-img-top" style="height: 100px;" alt="..."></a>
         <div class="card-body text-center">
-          <h6 class="card-title mb-0"><a href="/brand/{{$brand->id}}">{{$brand->name}}</a></h6>          
+          <p class="card-title mb-0"><a href="/brand/{{$brand->id}}">Комплектации</a></p>          
+          <p class="card-title mb-0"><a href="/model/{{$brand->id}}">Моделы</a></p>          
         </div>
       </div>
     </div>
     @endforeach
-   
     @endif
-    
   </div>
   <!-- /.row -->
-
-</div>
-
 <header class="bg-primary text-center py-3 mb-4">
   <div class="container">
     <h1 class="font-weight-light text-white" id="competitors">Список конкурентов</h1>

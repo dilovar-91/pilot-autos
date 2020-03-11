@@ -9,6 +9,7 @@ use App\Models\Brand;
 use App\Models\Site;
 use App\Models\Complectation;
 use App\Models\Competitor;
+use App\Models\CarModel;
 use Illuminate\Support\Facades\Auth;
 
 class CarController extends Controller
@@ -37,6 +38,7 @@ class CarController extends Controller
         $brands = Brand::orderBy('order')->get();
         $sites = Site::orderBy('order')->get();
         $competitors = Competitor::orderBy('order')->get();
+        $models = CarModel::orderBy('order')->get();
         return view('home')->with(array('brands'=>$brands, 'sites'=>$sites, 'competitors'=>$competitors ));
     }
 
@@ -44,6 +46,11 @@ class CarController extends Controller
     {
         $brand = Brand::with('cars')->findorfail($id);
         return view('welcome')->with(array('brand'=>$brand ));
+    }
+    public function modelDetail($id)
+    {
+        $brand = Brand::with('models')->findorfail($id);
+        return view('model')->with(array('brand'=>$brand ));
     }
     
     public function getComplectations($id)
