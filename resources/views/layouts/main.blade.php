@@ -33,12 +33,13 @@
 
 <div class="container-fluid pl-0 pr-0">
 @yield('content')
+
 </div>
     </div>
     <!-- /#page-content-wrapper -->
 
   </div>
-<a id="button"></a>
+  <a id="button"></a>
 <!-- /.container -->
 <script type="text/javascript">
     // tell the embed parent frame the height of the content
@@ -50,6 +51,14 @@
     }
     // always overwrite window.name, in case users try to set it manually
     window.name = "result"
+
+    
+    
+   
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
 
     var btn = $('#button');
 
@@ -64,12 +73,6 @@
     btn.on('click', function(e) {
       e.preventDefault();
       $('html, body').animate({scrollTop:0}, '300');
-    });
-    
-   
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
     });
   </script>
 
