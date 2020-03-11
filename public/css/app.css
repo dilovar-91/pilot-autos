@@ -61,6 +61,11 @@
   transform: scale(1.5);
 }
 
+#model:hover {
+  cursor: pointer;
+  font-weight: 23px;
+}
+
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors

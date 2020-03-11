@@ -25,7 +25,7 @@
   <tbody>
     @foreach($brand->models as $model)<tr>
       <th scope="row"><a href="{{$model->url}}" class="img-hover-zoom" target="_blank"><img src="/uploads/{{$model->pic}}" style="width: 135px;"/></a></th>
-      <td><h5><a href="{{$model->url}}" target="_blank">{{$model->name}}</a></h5></td>
+      <td><h5><a href="{{$model->url}}" class="model" target="_blank">{{$model->name}}</a></h5></td>
       <td>{{$model->assembly}}</td>
       <td>{{$model->comments}}</td>
       <td><a href="{{$model->external_link}}" target="_blank">Посетить</a></td>
