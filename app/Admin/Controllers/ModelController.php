@@ -7,6 +7,7 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 use \App\Models\CarModel;
+use \App\Models\Brand;
 
 class ModelController extends AdminController
 {
@@ -79,6 +80,12 @@ class ModelController extends AdminController
         $form->text('assembly', __('Место сборки'));
         $form->text('comments', __('Комментарии'));
         $form->text('external_link', __('Внешный источник'));
+        $form->select('brand_id', 'Марка')->options(function ($id) {
+            $brand = Brand::find($id);        
+            if ($brand) {
+                return [$brand->id => $brand->name];
+            }
+        })->ajax('/admin/api/brands');
         $form->number('order', __('Порядок'))->default(100);
 
         return $form;

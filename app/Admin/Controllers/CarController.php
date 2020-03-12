@@ -9,6 +9,7 @@ use Encore\Admin\Grid;
 use Encore\Admin\Show;
 use \App\Models\Car;
 use \App\Models\Type;
+use \App\Models\Brand;
 
 class CarController extends AdminController
 {
@@ -73,8 +74,12 @@ class CarController extends AdminController
         $form->text('name', __('Название'));
         $form->text('description', __('Описание'));
         $form->image('pic', __('Рисунок'));;
-        //$form->number('brand_id', __('Brand id'));
-        //$form->color('color', __('Color'));
+        $form->select('brand_id', 'Марка')->options(function ($id) {
+            $brand = Type::find($id);        
+            if ($brand) {
+                return [$brand->id => $brand->name];
+            }
+        })->ajax('/admin/api/brands');
         return $form;
     }
 
@@ -88,5 +93,10 @@ class CarController extends AdminController
     {
         $q = $request->get('q');
         return Car::where('name', 'like', "%$q%")->paginate(null, ['id', 'name as text']);
+    }
+    public function getBrand(Request $request)
+    {
+        $q = $request->get('q');
+        return Brand::where('name', 'like', "%$q%")->paginate(null, ['id', 'name as text']);
     }
 }
