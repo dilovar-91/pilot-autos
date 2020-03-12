@@ -86,6 +86,7 @@ class ModelController extends AdminController
                 return [$brand->id => $brand->name];
             }
         })->ajax('/admin/api/brands');
+        
         $form->number('order', __('Порядок'))->default(100);
 
         return $form;
