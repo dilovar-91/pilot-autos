@@ -54,6 +54,8 @@
         <div class="card-body text-center">
           <p class="card-title mb-0"><a href="/brand/{{$brand->id}}">Комплектации</a></p>          
           <p class="card-title mb-0"><a href="/model/{{$brand->id}}">Моделы</a></p>          
+          <p class="card-title mb-0"><a href="https://pilot-auto77.ru/auto/{{$brand->slug}}" target="_blank">Новый</a></p>      
+          <p class="card-title mb-0"><a href="https://used.pilot-auto77.ru/cars?f%5Bbrand%5D={{$brand->name}}" target="_blank">Подержанный</a></p>      
         </div>
       </div>
     </div>
