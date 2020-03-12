@@ -65,12 +65,12 @@ class CarController extends Controller
     }
     public function competitor_site()
     {
-        $competitors = Competitor::orderBy('order')->get();
+        $competitors = Competitor::where('site_type', 1)->orderBy('order')->get();
         return view('competitor_site')->with(array('competitors'=>$competitors));
     }
     public function competitor_landing()
     {
-        $competitors = Competitor::orderBy('order')->get();
+        $competitors = Competitor::where('site_type', 2)->orderBy('order')->get();
         return view('competitor_landing')->with(array('competitors'=>$competitors));
     }
 

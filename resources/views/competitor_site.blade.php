@@ -11,7 +11,7 @@
 <div class="row">
   @if (isset($competitors))
     @foreach($competitors as $competitor)
-    <div class="col-xl-3 col-md-4 col-6 mb-4 pr-1 pl-1">
+    <div class="col-xl-2 col-md-3 col-6 mb-4 pr-1 pl-1">
       <div class="card border-0 shadow">
       <a href="{{$competitor->url}}" target="_blank"><img src="/uploads/{{$competitor->pic ?? 'nopic.png'}}" class="card-img-top" style="height: 90px;" alt="..."></a>
         <div class="card-body text-center">
