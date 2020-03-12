@@ -9,7 +9,7 @@ use Encore\Admin\Show;
 use \App\Models\CarModel;
 use \App\Models\Brand;
 
-class ModelController extends AdminController
+class CarModelController extends AdminController
 {
     /**
      * Title for current resource.
