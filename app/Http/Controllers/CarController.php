@@ -37,9 +37,41 @@ class CarController extends Controller
     {
         $brands = Brand::orderBy('order')->get();
         $sites = Site::orderBy('order')->get();
-        $competitors = Competitor::orderBy('order')->get();
+        
         $models = CarModel::orderBy('order')->get();
         return view('home')->with(array('brands'=>$brands, 'sites'=>$sites, 'competitors'=>$competitors ));
+    }
+
+    public function sites()
+    {
+        $sites = Site::orderBy('order')->get();
+        return view('sites')->with(array('sites'=>$sites));
+    }
+    public function landings()
+    {
+        $landings = Site::orderBy('order')->get();
+        return view('landings')->with(array('landings'=>$landings));
+    }
+
+    public function brands()
+    {
+        $brands = Brand::orderBy('order')->get();
+        return view('brands')->with(array('brands'=>$brands));
+    }
+
+    public function competitors()
+    {
+        return view('competitors');
+    }
+    public function competitor_site()
+    {
+        $competitors = Competitor::orderBy('order')->get();
+        return view('competitor_site')->with(array('competitors'=>$competitors));
+    }
+    public function competitor_landing()
+    {
+        $competitors = Competitor::orderBy('order')->get();
+        return view('competitor_landing')->with(array('competitors'=>$competitors));
     }
 
     public function brandDetail($id)
