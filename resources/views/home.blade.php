@@ -1,6 +1,10 @@
 @extends('layouts.main')
 @section('title', 'Список автомобилей')
 @section('content')  
+<ol class="breadcrumb breadcrumb-arrow ml-0 pr-0 mb-0">
+  <li class=""><a href="#" ><i class="fa fa-fw fa-home"></i></a></li>
+  <li class="ml-0 active"><span>Меню</span></li>
+</ol>
 <header class="bg-primary text-center py-2 mb-4">
   <div class="container">
     <h1 class="font-weight-light text-white" id="sites">Главная</h1>

@@ -45,7 +45,8 @@ class CarController extends Controller
     public function sites()
     {
         $sites = Site::orderBy('order')->get();
-        return view('sites')->with(array('sites'=>$sites));
+        $landings = Site::orderBy('order')->get();
+        return view('sites')->with(array('sites'=>$sites, 'landings'=>$landings));
     }
     public function landings()
     {
@@ -87,7 +88,7 @@ class CarController extends Controller
     
     public function getComplectations($id)
     {
-        $carinfo = Car::with('complectations', 'complectations.type')->findorfail($id);
+        $carinfo = Car::with('complectations', 'complectations.type', 'brand')->findorfail($id);
         //$complectations = Complectation::where('car_id', $id)->get();
         return view('detail')->with(array('carinfo'=>$carinfo ));
     }    
