@@ -25,7 +25,7 @@
           <p class="card-title mb-0"><a href="/model/{{$brand->id}}">Модели</a></p>          
           <p class="card-title mb-0"><a href="https://pilot-auto77.ru/auto/{{$brand->slug}}" target="_blank">Новый</a></p>      
           <p class="card-title mb-0"><a href="https://autosalon77.ru/s-probegom/{{$brand->slug}}/" target="_blank">Подержанный</a></p>
-          <p class="card-title mb-0"><a href="https://auto.ru/diler-oficialniy/cars/all/pilot_avto_changan_moskva/{{$brand->slug}}/?sort=fresh_relevance_1-desc">Авто.ру</a></p>       
+          <p class="card-title mb-0"><a href="https://auto.ru/diler-oficialniy/cars/all/pilot_avto_changan_moskva/{{$brand->slug}}/?sort=fresh_relevance_1-desc" target="_blank">Авто.ру</a></p>       
         </div>
       </div>
     </div>
