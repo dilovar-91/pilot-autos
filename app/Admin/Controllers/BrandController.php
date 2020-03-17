@@ -67,7 +67,7 @@ class BrandController extends AdminController
 
         $form->text('name', __('Name'));
         $form->text('slug', __('Slug'));
-        $form->image('pic', __('Pic'));
+        $form->image('pic', __('Pic'))->move('brands');
 
         return $form;
     }

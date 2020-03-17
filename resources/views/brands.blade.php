@@ -19,13 +19,16 @@
     @foreach($brands as $brand)
     <div class="col-xl-2 col-md-3 col-6 mb-4 pr-1 pl-1">
       <div class="card border-0 shadow">
-      <a href="/brand/{{$brand->id}}"><img src="/uploads/brands/{{$brand->pic ?? 'nopic.png'}}" class="card-img-top" style="height: 100px;" alt="..."></a>
+      <a href="/brand/{{$brand->id}}"><img src="/uploads/{{$brand->pic ?? 'nopic.png'}}" class="card-img-top" style="height: 100px;" alt="..."></a>
         <div class="card-body text-center">
           <!--<p class="card-title mb-0"><a href="/brand/{{$brand->id}}">Комплектации</a></p> -->        
           <p class="card-title mb-0"><a href="/model/{{$brand->id}}">Модели</a></p>          
-          <p class="card-title mb-0"><a href="https://pilot-auto77.ru/auto/{{$brand->slug}}" target="_blank">Новый</a></p>      
-          <p class="card-title mb-0"><a href="https://autosalon77.ru/s-probegom/{{$brand->slug}}/" target="_blank">Подержанный</a></p>
-          <p class="card-title mb-0"><a href="https://auto.ru/diler-oficialniy/cars/all/pilot_avto_changan_moskva/{{$brand->slug}}/?sort=fresh_relevance_1-desc" target="_blank">Авто.ру</a></p>       
+          @if($brand->slug == 'vaz')<p class="card-title mb-0"><a href="https://pilot-auto77.ru/auto/lada" target="_blank">Новый</a></p>      
+          @else<p class="card-title mb-0"><a href="https://pilot-auto77.ru/auto/{{$brand->slug}}" target="_blank">Новый</a></p>@endif      
+          @if($brand->slug == 'vaz')<p class="card-title mb-0"><a href="https://autosalon77.ru/s-probegom/lada-vaz/" target="_blank">Подержанный</a></p>
+          @else<p class="card-title mb-0"><a href="https://autosalon77.ru/s-probegom/{{$brand->slug}}/" target="_blank">Подержанный</a></p>@endif
+          @if($brand->slug == 'ssangyong')<p class="card-title mb-0"><a href="https://auto.ru/diler-oficialniy/cars/all/pilot_avto_changan_moskva/ssang_yong/?sort=fresh_relevance_1-desc" target="_blank">Авто.ру</a></p>       
+          @else<p class="card-title mb-0"><a href="https://auto.ru/diler-oficialniy/cars/all/pilot_avto_changan_moskva/{{$brand->slug}}/?sort=fresh_relevance_1-desc" target="_blank">Авто.ру</a></p> @endif      
         </div>
       </div>
     </div>
