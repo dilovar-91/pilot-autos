@@ -2,6 +2,7 @@
   <div class="sidebar-heading">Pilot Auto </div>
   <div class="list-group list-group-flush">
     <a href="/" class="list-group-item list-group-item-action bg-light"><i class="fas fa-home"></i> Главная</a>
+    <a href="/car-prices" class="list-group-item list-group-item-action bg-light"><i class="fas fa-car"></i> Прайслист автомобилей</a>
     <a href="/sites" class="list-group-item list-group-item-action bg-light"><i class="fas fa-globe"></i> Сайты</a>
     <a href="/brands" class="list-group-item list-group-item-action bg-light"><i class="fas fa-car-alt"></i> Марки авто</a>
     <a href="/competitors" class="list-group-item list-group-item-action bg-light"><i class="fas fa-compress-alt"></i> Конкуренты</a>

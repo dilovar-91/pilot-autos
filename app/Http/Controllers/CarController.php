@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Car;
+use App\Models\CarPrice;
 use App\Models\Type;
 use App\Models\Brand;
 use App\Models\Site;
@@ -38,10 +39,16 @@ class CarController extends Controller
         $brands = Brand::orderBy('order')->get();
         $sites = Site::orderBy('order')->get();
         
-        $models = CarModel::orderBy('order')->get();
+        $models = CarModel::orderBy('order')->paginate(15);
         return view('home')->with(array('brands'=>$brands, 'sites'=>$sites, 'competitors'=>$competitors ));
     }
 
+    public function carPrices()
+    {
+        $cars = CarPrice::get();
+       
+        return view('car-prices')->with(array('cars'=>$cars));
+    }
     public function sites()
     {
         $sites = Site::orderBy('order')->get();

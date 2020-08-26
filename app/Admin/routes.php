@@ -11,7 +11,8 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('admin.home');
-    $router->resource('cars', CarController::class);
+    //$router->resource('cars', CarController::class);
+    $router->resource('car-prices', CarPriceController::class);
     $router->resource('complectations', ComplectationController::class);
     $router->resource('brands', BrandController::class);
     $router->resource('sites', SiteController::class);
@@ -20,5 +21,6 @@ Route::group([
     $router->get('/api/types', 'CarController@getType')->name('api.types');
     $router->get('/api/cars', 'CarController@getCar')->name('api.cars');
     $router->get('/api/brands', 'CarController@getBrand')->name('api.brands');
+    $router->get('/api/models', 'CarController@getModels')->name('api.models');
 
 });

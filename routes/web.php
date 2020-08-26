@@ -11,8 +11,10 @@
 |
 */
 
-Route::get('/', [HomeController::class, 'uses' => 'HomeController@index'])->name('home');
+//Route::get('/', [HomeController::class, 'uses' => 'HomeController@index'])->name('home');
+Route::get('/', [CarController::class, 'uses' => 'CarController@carPrices'])->name('carPrices');
 Route::get('/sites', [CarController::class, 'uses' => 'CarController@sites'])->name('sites');
+Route::get('/car-prices', [CarController::class, 'uses' => 'CarController@carPrices'])->name('carPrices');
 Route::get('/brands', [CarController::class, 'uses' => 'CarController@brands'])->name('cabrandsrs');
 Route::get('/competitors', [CarController::class, 'uses' => 'CarController@competitors'])->name('competitors');
 Route::get('/landings', [CarController::class, 'uses' => 'CarController@landings'])->name('landings');
@@ -26,3 +28,7 @@ Auth::routes(['register' => false]);
 
 Route::get('/home', [CarController::class, 'uses' => 'HomeController@index'])->name('home');
 Route::get('/logout', [HomeController::class, 'uses' => 'HomeController@logout'])->name('logout');
+
+Route::get('test', function () {
+    echo "role";
+})->middleware('check_user_role:' . \App\Role\UserRole::ROLE_SUPPORT);

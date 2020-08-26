@@ -4,10 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Car extends Model
+class CarPrice extends Model
 {
-    protected $fillable =['name','pic'];
-
+    protected $fillable =['mark','model'];
     public function complectations()
     {
         return $this->hasMany('App\Models\Complectation');
