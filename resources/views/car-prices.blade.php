@@ -3,6 +3,8 @@
 @section('content')
 <script src="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1569818907/jquery.table2excel.min.js"></script>
 <script src="/js/jquery.doubleScroll.js"></script>
+<script src="/js/jquery.dataTables.min.js"></script>
+<script src="/js/dataTables.bootstrap4.min.js"></script>
 <script >
 $(function() {
 $("#exporttable").click(function(e){
@@ -25,6 +27,40 @@ preserveColors: false
 $(document).ready(function(){
   $('.table-responsive').doubleScroll();
 });
+$(document).ready(function() {
+    $('#htmltable').DataTable({
+      "language":{
+  "processing": "Подождите...",
+  "search": "Поиск:",
+  "lengthMenu": "Показать _MENU_ записей",
+  "info": "Записи с _START_ до _END_ из _TOTAL_ записей",
+  "infoEmpty": "Записи с 0 до 0 из 0 записей",
+  "infoFiltered": "(отфильтровано из _MAX_ записей)",
+  "infoPostFix": "",
+  "loadingRecords": "Загрузка записей...",
+  "zeroRecords": "Записи отсутствуют.",
+  "emptyTable": "В таблице отсутствуют данные",
+  "paginate": {
+    "first": "Первая",
+    "previous": "Предыдущая",
+    "next": "Следующая",
+    "last": "Последняя"
+  },
+  "aria": {
+    "sortAscending": ": активировать для сортировки столбца по возрастанию",
+    "sortDescending": ": активировать для сортировки столбца по убыванию"
+  },
+  "select": {
+    "rows": {
+      "_": "Выбрано записей: %d",
+      "0": "Кликните по записи для выбора",
+      "1": "Выбрана одна запись"
+    }
+  }
+}
+}
+    );
+} );
 </script>
 <ol class="breadcrumb breadcrumb-arrow ml-0 pr-0 mb-0">
   <li class=""><a href="/"><i class="fa fa-fw fa-home"></i></a></li>
@@ -42,12 +78,12 @@ $(document).ready(function(){
 </header>
 
 <!-- Page Content -->
-<div class="container">
+<div class="container-fluid">
   <div class="row">
   @if (isset($cars))
-  <div class="table-responsive">
+  <div class="table-responsive ml-2 mr-2">
   
-  <table class="table table-bordered text-center table-striped" id="htmltable">
+  <table class="table table-bordered text-center table-striped " id="htmltable" data-page-length='100'>
   <thead>
     <tr>
       <th scope="col">№</th>         
