@@ -24,13 +24,10 @@ preserveColors: false
 });
 
 });
-$(document).ready(function(){
-  $('.table-responsive').doubleScroll();
-});
 $(document).ready(function () {
 $('#htmltable').DataTable({
 "scrollX": true,
-"scrollY": '60vh',
+"scrollY": '62vh',
 "language":{
   "processing": "Подождите...",
   "search": "Поиск:",
@@ -68,7 +65,7 @@ $('.dataTables_length').addClass('bs-select');
   <li class=""><a href="/"><i class="fa fa-fw fa-home"></i></a></li>
   <li class="ml-0 active"><a href="/cars"><i class="text-white fas fa-car"></i> Прайслист автомобилей</a></li>
 </ol>  
-<header class="bg-primary text-center py-0 mb-0 row">
+<header class="bg-primary text-center py-0 mb-1 row">
 <div class="container-fluid row">
   <div class="col-md-8">  
     <h1 class="font-weight-light text-white h3 mb-0">Прайслист автомобилей</h1>  
