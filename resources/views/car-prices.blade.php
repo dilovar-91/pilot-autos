@@ -27,9 +27,11 @@ preserveColors: false
 $(document).ready(function(){
   $('.table-responsive').doubleScroll();
 });
-$(document).ready(function() {
-    $('#htmltable').DataTable({
-      "language":{
+$(document).ready(function () {
+$('#htmltable').DataTable({
+"scrollX": true,
+"scrollY": '60vh',
+"language":{
   "processing": "Подождите...",
   "search": "Поиск:",
   "lengthMenu": "Показать _MENU_ записей",
@@ -57,21 +59,19 @@ $(document).ready(function() {
       "1": "Выбрана одна запись"
     }
   }
-}
-}
-    );
-} );
+},
+});
+$('.dataTables_length').addClass('bs-select');
+});
 </script>
 <ol class="breadcrumb breadcrumb-arrow ml-0 pr-0 mb-0">
   <li class=""><a href="/"><i class="fa fa-fw fa-home"></i></a></li>
   <li class="ml-0 active"><a href="/cars"><i class="text-white fas fa-car"></i> Прайслист автомобилей</a></li>
 </ol>  
-<header class="bg-primary text-center py-2 mb-1 row">
+<header class="bg-primary text-center py-0 mb-0 row">
 <div class="container-fluid row">
-  <div class="col-md-8">
-  
-    <h1 class="font-weight-light text-white">Прайслист автомобилей</h1>
-  
+  <div class="col-md-8">  
+    <h1 class="font-weight-light text-white h3 mb-0">Прайслист автомобилей</h1>  
   </div>
   <div class="col-md-4 text-right"><button id="exporttable" class="btn btn-outline-success"><i class="text-white fas fa-2x fa-file-excel"></i></button>  </div>
   </div>
@@ -98,25 +98,23 @@ $(document).ready(function() {
       <th scope="col">Altera</th>
       <th scope="col">ИНКОМ</th>
       <th scope="col">cargiant.ru</th>
-      <th scope="col">carso.ru</th>
-      <th scope="col">auto-official.ru</th>
-      <th scope="col">autocentr-khimki.ru</th>
-      <th scope="col">a-mm.ru</th>
-      <th scope="col">Фейр Авто</th>
-      <th scope="col">Ирбис</th>
+      <th scope="col">carso.ru</th>    
+      <th scope="col">autocentr-khimki.ru</th>      
+      <th scope="col">Фейр Авто</th>     
       <th scope="col">vitaauto.ru</th>      
       <th scope="col">center-avto.ru</th>
       <th scope="col">kit-avto.com</th>
       <th scope="col">ctc-motors.com</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody style="height: 10px !important; overflow: scroll;">
   <?php $i=0; ?>
     @foreach($cars as $row)<tr>
       <th scope="row">{{(++$i)}}</th> 
       <td>{{$row->mark ?? ''}}</td>
-      <td>{{$row->model ?? ''}}</td>         
-      <td class="bg-primary text-white font-weight-bold">{{ min($row->price_pilot, $row->price_light, $row->price_masmotors, $row->price_centralniy, $row->price_ria, $row->price_altera, $row->price_incom, $row->price_cargiant, $row->price_carso, $row->price_autoofficial, $row->price_autocentrkhimki, $row->price_amm, $row->price_fayer, $row->price_irbis, $row->price_vita, $row->price_centravto, $row->price_kitavto, $row->price_ctc)}}</td>
+      <td>{{$row->model ?? ''}}</td>   
+      <?php    $min = min(array_filter(array($row->price_pilot ? : PHP_INT_MAX , $row->price_light, $row->price_masmotors, $row->price_centralniy, $row->price_ria, $row->price_altera, $row->price_incom, $row->price_cargiant, $row->price_carso, $row->price_autocentrkhimki, $row->price_fayer, $row->price_vita, $row->price_centravto, $row->price_kitavto, $row->price_ctc)));?>
+      <td class="bg-primary text-white font-weight-bold"><?php echo ($min === PHP_INT_MAX ? " " : $min) ?></td>
       <td>{{$row->price_pilot}}</td>
       <td>{{$row->price_light}}</td>
       <td>{{$row->price_masmotors}}</td>
@@ -125,12 +123,9 @@ $(document).ready(function() {
       <td>{{$row->price_altera}}</td>
       <td>{{$row->price_incom}}</td>
       <td>{{$row->price_cargiant}}</td>
-      <td>{{$row->price_carso}}</td>
-      <td>{{$row->price_autoofficial}}</td>
-      <td>{{$row->price_autocentrkhimki}}</td>
-      <td>{{$row->price_amm}}</td>
-      <td>{{$row->price_fayer}}</td>
-      <td>{{$row->price_irbis}}</td>
+      <td>{{$row->price_carso}}</td>     
+      <td>{{$row->price_autocentrkhimki}}</td>     
+      <td>{{$row->price_fayer}}</td>      
       <td>{{$row->price_vita}}</td>
       <td>{{$row->price_centravto}}</td>
       <td>{{$row->price_kitavto}}</td>
@@ -143,5 +138,27 @@ $(document).ready(function() {
 
 </div>
 </div>
+
+<style>
+.htmltablewrapper {
+max-width: 600px;
+margin: 0 auto;
+}
+#htmltable th, td {
+white-space: nowrap;
+}
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+bottom: .5em;
+}
+</style>
 
 @endsection
