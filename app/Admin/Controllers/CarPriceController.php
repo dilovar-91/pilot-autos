@@ -28,7 +28,7 @@ class CarPriceController extends AdminController
 
         $grid->column('id', __('№'));
         $grid->column('mark', __('Марка'));
-        $grid->column('model', __('Модель'));
+        $grid->column('car_model', __('Модель'));
         $grid->column('description', __('Описание'));
         $grid->column('color', __('Цвет'));        
         $grid->column('price_pilot', __('Пилот Авто'));
@@ -66,7 +66,7 @@ class CarPriceController extends AdminController
 
         $show->field('id', __('№'));
         $show->field('mark', __('Марка'));
-        $show->field('model', __('Модель'));
+        $show->field('car_model', __('Модель'));
         $show->field('description', __('Описание'));
         $show->field('pic', __('Рисунок'));        
         $show->field('brand_id', __('Марка'));
@@ -107,7 +107,7 @@ class CarPriceController extends AdminController
         $form = new Form(new CarPrice());
         $form->column(1/2, function ($form) {            
             $form->text('mark', __('Марка'));        
-            $form->text('model', __('Модель'));        
+            $form->text('car_model', __('Модель'));        
             //$form->color('color', __('Цвет'));
             
             $form->number('price_pilot', __('Пилот Авто'));

@@ -109,7 +109,7 @@ $('.dataTables_length').addClass('bs-select');
     @foreach($cars as $row)<tr>
       <th scope="row">{{(++$i)}}</th> 
       <td>{{$row->mark ?? ''}}</td>
-      <td>{{$row->model ?? ''}}</td>   
+      <td>{{$row->car_model ?? ''}}</td>   
       <?php    $min = min(array_filter(array($row->price_pilot ? : PHP_INT_MAX , $row->price_light, $row->price_masmotors, $row->price_centralniy, $row->price_ria, $row->price_altera, $row->price_incom, $row->price_cargiant, $row->price_carso, $row->price_autocentrkhimki, $row->price_fayer, $row->price_vita, $row->price_centravto, $row->price_kitavto, $row->price_ctc)));?>
       <td class="bg-primary text-white font-weight-bold"><?php echo ($min === PHP_INT_MAX ? " " : $min) ?></td>
       <td>{{$row->price_pilot}}</td>
